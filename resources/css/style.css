@@ -1,31 +1,121 @@
+.body {
+    background-color: #752525;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.dashboard {
+    display: flex;
+    gap: 50px;
+    background: #1e1e1e;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+}
+
 .device {
-    width: 200px;
-    height: 250px;
-    margin: 20px;
+    width: 300px;
+    height: 300px;
+    margin: 100px;
+    margin-left: 340px;
     position: relative;
     text-align: center;
 }
 
 .device-body {
-    width: 200px;
-    height: 200px;
+    width: 100%;
+    height: 100%;
     border-radius: 50%;
     background: #111;
     border: 8px solide #333;
     box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.8), 0 0 20px rgba(0, 0, 0, 0.5);
     position: relative;
-    overflow: hidden;
 }
 
-.marks {
+.scale {
     position: absolute;
-    width: 100%;
-    height: 100%;
+    width: 90%;
+    height: 90%;
+    border-radius: 50%;
+    top: 5%;
+    left: 5%;
+}
+
+.mark {
+    position: absolute;
+    color: white;
+    font-size: 16px;
+    transform: translate(-50%, -50%) rotate(var(--angle)) translateY(-110px) rotate(calc(-1 * var(--angle)));
+    left: 50%;
+    top: 50%;
+}
+
+.needle {
+    position: absolute;
+    width: 3px;
+    height: 100px;
+    bottom: 50%;
+    left: 50%;
+    transform-origin: 50% 100%;
+    transform: rotate(-90deg);
+    transition: transform 0.5s ease-out;
+    z-index: 10;
+}
+
+.center {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: #444;
+    border-radius: 50%;
+    bottom: 50%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    z-index: 20;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.value {
+    text-align: center;
+    font-size: 24px;
+    margin-top: 20px;
+    font-family: 'Digital-7', monospace;
+}
+
+.speedometer .scale {
     background: conic-gradient(
-        transparent 0deg 60deg,
-        rgba(255, 255, 255, 0.3) 60deg 90deg,
-        transparent(255, 255, 255, 0.3) 240deg 270deg,
-        transparent 270deg 360deg
+        rgba(255, 255, 255, 0.3) 0deg 180deg,
+        transparent 180deg 360deg
     );
 }
 
+.speedometer .needle {
+    background: #ff5252;
+    box-shadow: 0 0 5px rgba(255, 82, 82, 0.7);
+}
+
+.speedometer .value {
+    color: #4CAF50;
+}
+
+.tachometer .scale {
+    background: conic-gradient(
+        rgba(255, 0, 0, 0.3) 0deg 100deg,
+        rgba(255, 255, 255, 0.3) 100deg 180deg,
+        transparent 180deg 360deg
+    );
+}
+
+.tachometer .needle {
+    background: #FFC107;
+    box-shadow: 0 0 5px rgba(255, 193, 7, 0.7);
+}
+
+.tachometer .value {
+    color: #FFC107;
+}
