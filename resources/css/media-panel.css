@@ -1,0 +1,116 @@
+@import url(root.css);
+
+.media-panel {
+    background: var(--b-black-dark);
+    border-radius: 10px;
+    margin: 50px;
+    margin-left: 730px;
+    width: 500px;
+    font-family: var(--font-courier);
+    box-shadow: inset 0 0 10px var(--bs-black-opaque);
+    border: 2px solid var(--b-grey-dark);
+}
+
+.player-display {
+    background: var(--b-black-light);
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    color: var(--c-green);
+    text-align: center;
+    font-size: 16px;
+    text-shadow: 0 0 5px var(--ts-green-opaque);
+}
+
+.track-info {
+    margin-bottom: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.time-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    color: var(--b-grey-light);
+}
+
+#progress-bar {
+    flex-grow: 1;
+    height: 5px;
+    background: var(--b-grey-dark);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.player-controls {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.player-controls button {
+    background: var(--b-grey-dark);
+    border: none;
+    color: var(--c-white);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 18px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.player-controls button:hover {
+    background: var(--c-green);
+    transform: scale(1.1);
+}
+
+#volume-bar {
+    width: 80px;
+    height: 5px;
+    margin: auto 0;
+    background: var(--b-grey-dark);
+}
+
+.playlist {
+    max-height: 150px;
+    overflow-y: auto;
+}
+
+.track {
+    padding: 10px;
+    background: var(--b-grey-dark);
+    margin-bottom: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.2s;
+    color: var(--c-white);
+}
+
+.track:hover {
+    background: var(--b-grey-light);
+}
+
+.track.playing {
+    background: var(--c-green);
+    color: var(--b-black-light);
+    font-weight: bold;
+}
+
+input[type="range"] {
+    height: 5px;
+    background: var(--b-grey-dark);
+    border-radius: 5px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    width: 15px;
+    height: 15px;
+    background: var(--c-green);
+    border-radius: 50%;
+    cursor: pointer;
+}

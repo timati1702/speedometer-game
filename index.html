@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="resources/css/style.css">
-        <link rel="stylesheet" href="resources/css/reset.css">
+        <link rel="stylesheet" href="style.css">
         <title>Приборная панель автомобиля - Игра</title>
     </head>
     <body>
@@ -56,5 +55,30 @@
                 <div class="label">ТАХОМЕТР (x1000 об/мин)</div>
             </div>
         </div>
+        <div class="media-panel">
+            <div class="player-display">
+                <div class="track-info" id="now-playing">Трек не выбран</div>
+                <div class="time-info">
+                    <span id="current-time">0:00</span>
+                    <input type="range" id="progress-bar" value="0">
+                    <span id="duration">0:00</span>
+                </div>
+            </div>
+            
+            <div class="player-controls">
+                <button id="prev-btn">⏮</button>
+                <button id="play-btn">▶</button>
+                <button id="next-btn">⏭</button>
+                <button id="mute-btn">🔊</button>
+                <input type="range" id="volume-bar" min="0" max="1" step="0.1" value="0.7">
+            </div>
+            
+            <div class="playlist">
+                <div class="track" data-src="music/engine-sound.mp3">Двигатель</div>
+                <div class="track" data-src="music/rock-track.mp3">Рок-хит</div>
+                <div class="track" data-src="music/electronic.mp3">Электроника</div>
+            </div>
+        </div>
+        <script src="script.js"></script>
     </body>
 </html>
