@@ -1,7 +1,30 @@
+:root {
+    /* font-family */
+    --font-courier: 'Courier New', Courier, monospace;
+    --font-digital: 'Digital-7', monospace;
+
+    /* colors */
+    --b-black-dark: #1e1e1e;
+    --b-black-light: #111;
+    --b-grey-dark: #333;
+    --b-grey-light: #444;
+    --b-grey-light-transparent: rgba(255, 255, 255, 0.3);
+    --b-red: #ff5252;
+    --b-red-transparent: rgba(255, 0, 0, 0.3);
+    --b-yellow: #FFC107;
+    --bg-red: #752525;
+    --bs-black-transparent: rgba(0, 0, 0, 0.5);
+    --bs-black-opaque: rgba(0, 0, 0, 0.8);
+    --bs-red-opaque: rgba(255, 82, 82, 0.7);
+    --bs-yellow-opaque: rgba(255, 193, 7, 0.7);
+    --c-white: white;
+    --c-green: #4CAF50;
+}
+
 .body {
-    background-color: #752525;
-    color: white;
-    font-family: 'Courier New', Courier, monospace;
+    background-color: var(--bg-red);
+    color: var(--c-white);
+    font-family: var(--font-courier);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -12,10 +35,10 @@
 .dashboard {
     display: flex;
     gap: 50px;
-    background: #1e1e1e;
+    background:  var(--b-black-dark);
     padding: 30px;
     border-radius: 15px;
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 30px var(--bs-black-transparent);
 }
 
 .device {
@@ -31,9 +54,9 @@
     width: 100%;
     height: 100%;
     border-radius: 50%;
-    background: #111;
-    border: 8px solide #333;
-    box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.8), 0 0 20px rgba(0, 0, 0, 0.5);
+    background: var(--b-black-light);
+    border: 8px solide var(--b-grey-dark);
+    box-shadow: inset 0 0 15px var(--bs-black-opaque), 0 0 20px var(--bs-black-transparent);
     position: relative;
 }
 
@@ -48,7 +71,7 @@
 
 .mark {
     position: absolute;
-    color: white;
+    color: var(--c-white);
     font-size: 16px;
     transform: translate(-50%, -50%) rotate(var(--angle)) translateY(-110px) rotate(calc(-1 * var(--angle)));
     left: 50%;
@@ -71,51 +94,51 @@
     position: absolute;
     width: 20px;
     height: 20px;
-    background: #444;
+    background: var(--b-grey-light);
     border-radius: 50%;
     bottom: 50%;
     left: 50%;
     transform: translate(-50%, 50%);
     z-index: 20;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 10px var(--bs-black-transparent);
 }
 
 .value {
     text-align: center;
     font-size: 24px;
     margin-top: 20px;
-    font-family: 'Digital-7', monospace;
+    font-family: var(--font-digital);
 }
 
 .speedometer .scale {
     background: conic-gradient(
-        rgba(255, 255, 255, 0.3) 0deg 180deg,
+        var(--b-grey-light-transparent) 0deg 180deg,
         transparent 180deg 360deg
     );
 }
 
 .speedometer .needle {
-    background: #ff5252;
-    box-shadow: 0 0 5px rgba(255, 82, 82, 0.7);
+    background: var(--b-red);
+    box-shadow: 0 0 5px var(-bs-red-opaque);
 }
 
 .speedometer .value {
-    color: #4CAF50;
+    color: var(--c-green);
 }
 
 .tachometer .scale {
     background: conic-gradient(
-        rgba(255, 0, 0, 0.3) 0deg 100deg,
-        rgba(255, 255, 255, 0.3) 100deg 180deg,
+        var(--b-red-transparent) 0deg 100deg,
+        var(--b-grey-light-transparent) 100deg 180deg,
         transparent 180deg 360deg
     );
 }
 
 .tachometer .needle {
-    background: #FFC107;
-    box-shadow: 0 0 5px rgba(255, 193, 7, 0.7);
+    background: var(--b-yellow);
+    box-shadow: 0 0 5px var(--bs-yellow-opaque);
 }
 
 .tachometer .value {
-    color: #FFC107;
+    color: var(--b-yellow);
 }
