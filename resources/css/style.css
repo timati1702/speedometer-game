@@ -19,6 +19,7 @@
     --bs-yellow-opaque: rgba(255, 193, 7, 0.7);
     --c-white: white;
     --c-green: #4CAF50;
+    --ts-green-opaque: rgba(76, 175, 80, 0.7);
 }
 
 .body {
@@ -34,7 +35,8 @@
 
 .dashboard {
     display: flex;
-    gap: 50px;
+    align-items: center;
+    gap: 20px;
     background:  var(--b-black-dark);
     padding: 30px;
     border-radius: 15px;
@@ -45,9 +47,8 @@
     width: 300px;
     height: 300px;
     margin: 100px;
-    margin-left: 340px;
+    margin-left: 190px;
     position: relative;
-    text-align: center;
 }
 
 .device-body {
@@ -72,7 +73,7 @@
 .mark {
     position: absolute;
     color: var(--c-white);
-    font-size: 16px;
+    font-size: 20px;
     transform: translate(-50%, -50%) rotate(var(--angle)) translateY(-110px) rotate(calc(-1 * var(--angle)));
     left: 50%;
     top: 50%;
@@ -126,6 +127,20 @@
     color: var(--c-green);
 }
 
+.speedometer .label{
+    color: var(--c-white);
+    font-size: 18px;
+    font-family: var(--font-courier);
+    margin-left: 70px;
+} 
+
+.tachometer .label {
+    color: var(--c-white);
+    font-size: 18px;
+    font-family: var(--font-courier);
+    margin-left: 40px;
+}
+
 .tachometer .scale {
     background: conic-gradient(
         var(--b-red-transparent) 0deg 100deg,
@@ -141,4 +156,52 @@
 
 .tachometer .value {
     color: var(--b-yellow);
+}
+
+.device-display {
+    background: var(--b-black-light);
+    border: 2px solid var(--b-grey-dark);
+    border-radius: 10px;
+    padding: 15px;
+    width: 200px;
+    margin: 20px auto;
+    box-shadow: inset 0 0 10px var(--bs-black-transparent);
+}
+
+.device-indicator {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.display .label {
+    padding: 10px;
+    background: var(--b-grey-dark);
+    border-radius: 5px;
+    color: var(--b-grey-light);
+    text-align: center;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.display .label:hover {
+    background: var(--b-grey-light);
+}
+
+.current-gear {
+    font-size: 42px;
+    text-align: center;
+    color: var(--c-green);
+    text-shadow: 0 0 10px var(--ts-green-opaque);
+    height: 60px;
+    line-height: 60px;
+    margin-top: 15px;
+    font-family: var(--font-digital);
+}
+
+.device .label.active {
+    background: var(--c-green);
+    color: var(--b-black-light);
+    box-shadow: 0 0 8px var(--bs-red-opaque);
 }
