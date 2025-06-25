@@ -1,0 +1,23 @@
+:root {
+    /* font-family */
+    --font-courier: 'Courier New', Courier, monospace;
+    --font-digital: 'Digital-7', monospace;
+
+    /* colors */
+    --b-black-dark: #1e1e1e;
+    --b-black-light: #111;
+    --b-grey-dark: #333;
+    --b-grey-light: #444;
+    --b-grey-light-transparent: rgba(255, 255, 255, 0.3);
+    --b-red: #ff5252;
+    --b-red-transparent: rgba(255, 0, 0, 0.3);
+    --b-yellow: #FFC107;
+    --bg-grey: #999999;
+    --bs-black-transparent: rgba(0, 0, 0, 0.5);
+    --bs-black-opaque: rgba(0, 0, 0, 0.8);
+    --bs-red-opaque: rgba(255, 82, 82, 0.7);
+    --bs-yellow-opaque: rgba(255, 193, 7, 0.7);
+    --c-white: white;
+    --c-green: #4CAF50;
+    --ts-green-opaque: rgba(76, 175, 80, 0.7);
+}
