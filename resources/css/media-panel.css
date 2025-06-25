@@ -1,4 +1,5 @@
 @import url(root.css);
+@import url(reset.css);
 
 .media-panel {
     background: var(--b-black-dark);
