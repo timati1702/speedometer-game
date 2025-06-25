@@ -42,6 +42,12 @@ export class CarPanel {
         sound.play().catch(e => console.log("Не удалось воспроизвести звук:", e));
     }
 
+    playEngineRevSound() {
+        const sound = new Audio('resources/audio/sounds/engine-rev.mp3');
+        sound.volume = 0.4;
+        sound.play().catch(e => console.log("Не удалось воспроизвести звук:", e));
+    }
+
     initGearbox() {
         this.gearLabels.forEach(label => {
             label.addEventListener('click', () => {
@@ -92,17 +98,23 @@ export class CarPanel {
     }
 
     startAcceleration() {
+        this.playEngineRevSound();
         this.stopAcceleration();
 
         this.accelerationInterval = setInterval(() => {
-            if (this.currentGear === 'D') {
+            if (this.currentGear === 'P' || this.currentGear === 'N') {
+                this.rpm = Math.min(this.rpm + 0.1, 4); 
+            }
+            else if (this.currentGear === 'D') {
                 this.speed = Math.min(this.speed + 0.5, 240);
+                this.rpm = Math.min(7, 0.5 + this.speed * 0.03);
             }
             else if (this.currentGear === 'R') {
                 this.speed = Math.min(this.speed + 0.3, 60);
+                this.rpm = Math.min(4, 0.5 + this.speed * 0.05);
             }
 
-            this.updateRPM();
+            this.updateTachometer(this.rpm);
             this.updateSpeedometer(this.speed);
         }, 50);
     }
@@ -111,13 +123,15 @@ export class CarPanel {
         this.stopRpmIncrease();
 
         this.accelerationInterval = setInterval(() => {
-            this.rpm = Math.min(this.rpm + 0.1, 8);
-            this.updateTachometer(this.rpm);
+            this.rpm = Math.min(this.rpm + 0.1,
+                this.currentGear === 'P' || this.currentGear === 'N' ? 4 : 8);
 
-            if(this.currentGear === 'P' || this.currentGear === 'N') {
+            if (this.currentGear === 'P' || this.currentGear === 'N') {
                 this.speed = 0;
-                this.updateSpeedometer(this.speed);
             }
+
+            this.updateTachometer(this.rpm);
+            this.updateSpeedometer(this.speed);
         }, 50);
     }
 
@@ -145,7 +159,10 @@ export class CarPanel {
     }
 
     updateRPM() {
-        if (this.currentGear === 'D' || this.currentGear === 'P' || this.currentGear === 'N') {
+        if (this.currentGear === 'P' || this.currentGear === 'N') {
+            this.rpm = 0.8 + Math.random() * 0.4;
+        }
+        else if (this.currentGear === 'D') {
             this.rpm = Math.min(7, 0.5 + this.speed * 0.03 + Math.random() * 0.1);
         }
         else if (this.currentGear === 'R') {

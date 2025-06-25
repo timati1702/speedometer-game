@@ -3,7 +3,7 @@
 @import url(resources/css/reset.css);
 
 body {
-    background-color: var(--bg-red);
+    background-color: var(--bg-grey);
     color: var(--c-white);
     font-family: var(--font-courier);
 }
