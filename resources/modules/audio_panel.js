@@ -76,7 +76,7 @@ export class AudioPanel {
     }
 
     playNextTrack() {
-        const nextIndex = (this.urrentTrackIndex + 1) % this.trackList.length;
+        const nextIndex = (this.currentTrackIndex + 1) % this.trackList.length;
         this.playTrack(nextIndex);
         this.playClickSound();
     }
