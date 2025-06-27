@@ -12,7 +12,7 @@ body {
     display: flex;
     align-items: center;
     gap: 20px;
-    background:  var(--b-black-dark);
+    background: var(--b-black-dark);
     padding: 30px;
     border-radius: 15px;
     box-shadow: 0 0 30px var(--bs-black-transparent);
@@ -87,10 +87,8 @@ body {
 }
 
 .speedometer .scale {
-    background: conic-gradient(
-        var(--b-grey-light-transparent) 0deg 180deg,
-        transparent 180deg 360deg
-    );
+    background: conic-gradient(var(--b-grey-light-transparent) 0deg 180deg,
+            transparent 180deg 360deg);
 }
 
 .speedometer .needle {
@@ -102,12 +100,12 @@ body {
     color: var(--c-green);
 }
 
-.speedometer .label{
+.speedometer .label {
     color: var(--c-white);
     font-size: 18px;
     font-family: var(--font-courier);
     margin-left: 70px;
-} 
+}
 
 .tachometer .label {
     color: var(--c-white);
@@ -117,11 +115,9 @@ body {
 }
 
 .tachometer .scale {
-    background: conic-gradient(
-        var(--b-red-transparent) 0deg 100deg,
-        var(--b-grey-light-transparent) 100deg 180deg,
-        transparent 180deg 360deg
-    );
+    background: conic-gradient(var(--b-red-transparent) 0deg 100deg,
+            var(--b-grey-light-transparent) 100deg 180deg,
+            transparent 180deg 360deg);
 }
 
 .tachometer .needle {
@@ -131,16 +127,6 @@ body {
 
 .tachometer .value {
     color: var(--b-yellow);
-}
-
-.device-display {
-    background: var(--b-black-light);
-    border: 2px solid var(--b-grey-dark);
-    border-radius: 10px;
-    padding: 15px;
-    width: 200px;
-    margin: 20px auto;
-    box-shadow: inset 0 0 10px var(--bs-black-transparent);
 }
 
 .device-indicator {
@@ -179,4 +165,187 @@ body {
     background: var(--c-green);
     color: var(--b-black-light);
     box-shadow: 0 0 8px var(--bs-red-opaque);
+}
+
+@media (max-width: 1800px) {
+    .device {
+        width: 250px;
+        height: 250px;
+        margin: 50px;
+        margin-left: 140px;
+    }
+
+    .mark {
+        font-size: 16px;
+        transform: translate(-50%, -50%) rotate(var(--angle)) translateY(-100px) rotate(calc(-1 * var(--angle)));
+    }
+
+    .value {
+        font-size: 20px;
+    }
+
+    .needle {
+        height: 90px;
+    }
+
+    .speedometer .label {
+        font-size: 14px;
+        margin-left: 50px;
+    }
+
+    .tachometer .label {
+        font-size: 14px;
+        margin-left: 30px;
+    }
+}
+
+@media (max-width: 1425px) {
+    .device {
+        width: 200px;
+        height: 200px;
+        margin: 40px;
+        margin-left: 100px;
+    }
+
+    .mark {
+        font-size: 14px;
+        transform: translate(-50%, -50%) rotate(var(--angle)) translateY(-75px) rotate(calc(-1 * var(--angle)));
+    }
+
+    .value {
+        font-size: 16px;
+    }
+
+    .needle {
+        height: 65px;
+    }
+
+    .speedometer .label {
+        font-size: 12px;
+        margin-left: 50px;
+    }
+
+    .tachometer .label {
+        font-size: 12px;
+        margin-left: 30px;
+    }
+}
+
+@media (max-width: 1120px) {
+    .device {
+        width: 150px;
+        height: 150px;
+        margin: 40px;
+        margin-left: 60px;
+    }
+
+    .mark {
+        font-size: 10px;
+        transform: translate(-50%, -50%) rotate(var(--angle)) translateY(-60px) rotate(calc(-1 * var(--angle)));
+    }
+
+    .value {
+        font-size: 14px;
+    }
+
+    .needle {
+        height: 50px;
+    }
+
+    .speedometer .label {
+        font-size: 8px;
+        margin-left: 40px;
+    }
+
+    .tachometer .label {
+        font-size: 8px;
+        margin-left: 30px;
+    }
+
+    .current-gear {
+        font-size: 30px;
+    }
+
+    .display .label {
+        padding: 5px;
+    }
+}
+
+@media (max-width: 850px) {
+    .device {
+        width: 150px;
+        height: 150px;
+        margin: 40px;
+        margin-left: 20px;
+    }
+}
+
+@media (max-width: 725px) {
+    .device {
+        width: 100px;
+        height: 100px;
+        margin: 40px;
+        margin-left: 20px;
+    }
+
+    .mark {
+        font-size: 8px;
+        transform: translate(-50%, -50%) rotate(var(--angle)) translateY(-40px) rotate(calc(-1 * var(--angle)));
+    }
+
+    .value {
+        font-size: 12px;
+    }
+
+    .needle {
+        height: 30px;
+    }
+
+    .speedometer .label {
+        font-size: 8px;
+        margin-left: 20px;
+    }
+
+    .tachometer .label {
+        font-size: 8px;
+        margin-left: 0;
+    }
+
+    .current-gear {
+        font-size: 24px;
+    }
+
+    .display .label {
+        padding: 1px;
+    }
+}
+
+@media (max-width: 580px) {
+    .dashboard {
+        gap: 0px;
+    }
+
+    .device {
+        width: 100px;
+        height: 100px;
+        margin: 40px 10px 40px 5px;
+    }
+}
+
+@media (max-width: 400px) {
+    .device {
+        width: 80px;
+        height: 80px;
+        margin: 10px 10px 40px 5px;
+    }
+
+    .mark {
+        font-size: 6px;
+        transform: translate(-50%, -50%) rotate(var(--angle)) translateY(-30px) rotate(calc(-1 * var(--angle)));
+    }
+
+    .current-gear {
+        font-size: 20px;
+        margin-top: 0px;
+    }
 }
